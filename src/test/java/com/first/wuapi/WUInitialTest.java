@@ -7,9 +7,11 @@ import java.io.InputStreamReader;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.conn.ssl.X509HostnameVerifier;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.JsonParseException;
@@ -35,11 +37,8 @@ public class WUInitialTest {
 			
 			String url = "http://api.wunderground.com/api/18d2fdceb2650b34/conditions/q/CA/San_Francisco.json";
 			
-			
-			@SuppressWarnings("deprecation")
-			DefaultHttpClient httpClient = new DefaultHttpClient();
-			HttpGet getRequest = new HttpGet(
-					url );
+			HttpClient httpClient = HttpClientBuilder.create().build();
+			HttpGet getRequest = new HttpGet( url );
 			getRequest.addHeader("accept", "text/plain");
 
 			try {
@@ -83,5 +82,6 @@ public class WUInitialTest {
 			
 			
 		}
+	
 
 }
