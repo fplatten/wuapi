@@ -18,13 +18,11 @@ public class WUFactory {
 		 element.setResult(result);
 		 
 		 try {
-			element.parse();
+			element = element.parse();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		 
-		 
 		 
 		 return (T) element;
 	}
