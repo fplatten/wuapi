@@ -20,18 +20,18 @@ import org.junit.Test;
 public class WUInitialTest {
 	
 	@Test
-	public void NotestGoggleScrape(){
+	public void testWeatherUndergroundApi(){
 		
 		String key = ""; //get from local prop file
+		//http://www.wunderground.com/weather/api/d/docs?d=data/index&MR=1
 			
-			String url = "http://api.wunderground.com/api/18d2fdceb2650b34/conditions/q/CA/San_Francisco.json";
+			String url = "http://api.wunderground.com/api/"+ key + "/conditions/q/CA/San_Francisco.json";
 			
 			HttpClient httpClient = HttpClientBuilder.create().build();
 			HttpGet getRequest = new HttpGet( url );
 			getRequest.addHeader("accept", "text/plain");
 
 			try {
-				
 				
 				HttpResponse response = httpClient.execute(getRequest);
 				
