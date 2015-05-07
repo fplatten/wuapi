@@ -1,4 +1,6 @@
-package com.first.wuapi.domain;
+package com.first.wuapi.domain.geolookup;
+
+import com.first.wuapi.domain.WUElement;
 
 public class GeoLookupResult extends WUElement{
 	

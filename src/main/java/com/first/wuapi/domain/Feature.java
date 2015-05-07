@@ -1,6 +1,7 @@
 package com.first.wuapi.domain;
 
 import com.first.wuapi.domain.conditions.ConditionsResult;
+import com.first.wuapi.domain.geolookup.GeoLookupResult;
 
 
 public enum Feature {

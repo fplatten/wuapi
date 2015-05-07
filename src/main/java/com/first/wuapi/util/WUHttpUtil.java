@@ -13,16 +13,16 @@ import org.apache.http.impl.client.HttpClientBuilder;
 public class WUHttpUtil {
 	
 	
-	private static final String key = ""; // get key from local property file
-	private static final String template = "http://api.wunderground.com/api/{0}/{1}/q/{2}/{3}.{4}";
+	private static final String KEY = ""; // get key from local property file
+	private static final String TEMPLATE = "http://api.wunderground.com/api/{0}/{1}/q/{2}/{3}.{4}";
 	
 	
 	public static String getWuResponse(String feature, String settings, String query,
 			String format){
 		
 		String url = MessageFormat.format(
-				template,
-			      new Object[] { key , feature, settings, query, format});
+				TEMPLATE,
+			      new Object[] { KEY , feature, settings, query, format});
 		
 		System.out.println(url);
 		HttpClient httpClient = HttpClientBuilder.create().build();
@@ -31,10 +31,6 @@ public class WUHttpUtil {
 		
 		StringBuffer sb = new StringBuffer();
 		String line;
-		
-			
-			
-				
 				
 				try {
 					HttpResponse response = httpClient.execute(getRequest);
@@ -45,9 +41,7 @@ public class WUHttpUtil {
 					}
 
 					BufferedReader br = new BufferedReader(
-					                 new InputStreamReader((response.getEntity().getContent())));		
-					
-					
+					                 new InputStreamReader((response.getEntity().getContent())));	
 					
 					while ((line = br.readLine()) != null) {
 						sb.append(line);
