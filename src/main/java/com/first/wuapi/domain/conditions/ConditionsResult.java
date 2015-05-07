@@ -85,18 +85,18 @@ this.additionalProperties.put(name, value);
 }
 
 
-@Override
-public WUElement parse() throws JsonParseException, IOException {
-	
-	ObjectMapper mapper = new ObjectMapper();
-	mapper.configure(Feature.AUTO_CLOSE_SOURCE, true);
-	JsonFactory factory = mapper.getFactory();
-	JsonParser jp = factory.createParser(result);
-	
-	System.out.println(result);
-	
-	return mapper.readValue( jp  , ConditionsResult.class);
-}
+//@Override
+//public WUElement parse() throws JsonParseException, IOException {
+//	
+//	ObjectMapper mapper = new ObjectMapper();
+//	mapper.configure(Feature.AUTO_CLOSE_SOURCE, true);
+//	JsonFactory factory = mapper.getFactory();
+//	JsonParser jp = factory.createParser(result);
+//	
+//	System.out.println(result);
+//	
+//	return mapper.readValue( jp  , ConditionsResult.class);
+//}
 
 
 }
