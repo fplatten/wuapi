@@ -3,7 +3,6 @@ package com.first.wuapi.domain;
 import java.io.IOException;
 
 import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.core.JsonParser;
 
 public interface Parsable {
 	

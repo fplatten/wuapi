@@ -24,7 +24,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 "response",
 "current_observation"
 })
-public class ConditionsResult extends WUElement{
+public class ConditionsResult extends WUElement {
 
 @JsonProperty("response")
 private Response response;
@@ -82,6 +82,7 @@ return this.additionalProperties;
 public void setAdditionalProperty(String name, Object value) {
 this.additionalProperties.put(name, value);
 }
+
 
 @Override
 public WUElement parse() throws JsonParseException, IOException {

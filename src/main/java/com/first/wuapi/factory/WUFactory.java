@@ -12,7 +12,7 @@ public class WUFactory {
 	public static <T> T getFeatureResult(String result,  String feature) throws InstantiationException, IllegalAccessException
 	{
 		 Parsable element = null;
-		    
+
 		 Class<? extends WUElement> clazz = Feature.valueOf(feature.toUpperCase()).getClazz();
 		 element = clazz.newInstance();
 		 element.setResult(result);

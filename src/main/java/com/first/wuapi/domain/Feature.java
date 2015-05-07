@@ -8,7 +8,7 @@ public enum Feature {
 	private final String name;
 	private final Class<? extends WUElement> clazz;
 	
-	private Feature(String name, Class<? extends WUElement> clazz){
+	private Feature(String name, Class clazz){
 		
 		this.name = name;
 		this.clazz = clazz;
