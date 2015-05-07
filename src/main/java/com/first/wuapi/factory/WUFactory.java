@@ -1,5 +1,7 @@
 package com.first.wuapi.factory;
 
+import java.io.IOException;
+
 import com.first.wuapi.domain.Parsable;
 import com.first.wuapi.domain.WUElement;
 import com.first.wuapi.domain.Feature;
@@ -13,8 +15,17 @@ public class WUFactory {
 		    
 		 Class<? extends WUElement> clazz = Feature.valueOf(feature.toUpperCase()).getClazz();
 		 element = clazz.newInstance();
+		 element.setResult(result);
 		 
-		 element.parse();
+		 try {
+			element.parse();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 
+		 
+		 
 		 return (T) element;
 	}
 }

@@ -10,6 +10,7 @@ import org.codehaus.jackson.JsonProcessingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
 
+import com.first.wuapi.domain.ConditionsResult;
 import com.first.wuapi.util.WUHttpUtil;
 
 public class HttpUtilTest {
@@ -33,6 +34,10 @@ public class HttpUtilTest {
 			try {
 				JsonParser jp = factory.createJsonParser(result);
 				JsonNode rootNode = mapper.readTree(jp);
+				
+				//ConditionsResult co = mapper.readValue( jp  , ConditionsResult.class);
+				
+				//co.getCurrentObservation().getStationId();
 				
 				System.out.println(mapper.writeValueAsString(rootNode));
 				

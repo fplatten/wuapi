@@ -2,8 +2,8 @@ package com.first.wuapi.domain;
 
 public enum Feature {
 	
-	CONDITIONS("conditions", Conditions.class),
-	GEOLOOKUP( "geolookup", GeoLookup.class);
+	CONDITIONS("conditions", ConditionsResult.class),
+	GEOLOOKUP( "geolookup", GeoLookupResult.class);
 	
 	private final String name;
 	private final Class<? extends WUElement> clazz;

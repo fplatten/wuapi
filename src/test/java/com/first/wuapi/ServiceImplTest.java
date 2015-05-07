@@ -4,7 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.first.wuapi.domain.Conditions;
+import com.first.wuapi.domain.ConditionsResult;
+import com.first.wuapi.domain.CurrentObservation;
 import com.first.wuapi.domain.WUElement;
 import com.first.wuapi.services.WUndergroundService;
 import com.first.wuapi.services.impl.WUndergroundServiceImpl;
@@ -23,7 +24,14 @@ public class ServiceImplTest {
 		
 		WUElement element = wUndergroundService.query(feature, settings, query, format);
 		
-		assertEquals( Conditions.class  , element.getClass());
+		assertEquals( ConditionsResult.class  , element.getClass());
+		
+		ConditionsResult cr = (ConditionsResult) element;
+		
+		CurrentObservation co = cr.getCurrentObservation();
+		
+		
+		assertEquals( "KCASANFR58"  , co.getStationId());
 		
 		
 	}

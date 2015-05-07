@@ -1,5 +1,7 @@
 package com.first.wuapi.domain;
 
+import com.fasterxml.jackson.core.JsonParser;
+
 public class Conditions extends WUElement {
 	
 	
@@ -12,7 +14,5 @@ public class Conditions extends WUElement {
 		
 		return new Conditions();
 	}
-
-	
 
 }
