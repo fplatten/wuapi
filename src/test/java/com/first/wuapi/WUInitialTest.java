@@ -30,44 +30,34 @@ public class WUInitialTest {
 			HttpClient httpClient = HttpClientBuilder.create().build();
 			HttpGet getRequest = new HttpGet( url );
 			getRequest.addHeader("accept", "text/plain");
+				
+				try {
+					HttpResponse response = httpClient.execute(getRequest);
+					
+					if (response.getStatusLine().getStatusCode() != 200) {
+						throw new RuntimeException("Failed : HTTP error code : "
+						   + response.getStatusLine().getStatusCode());
+					}
 
-			try {
-				
-				HttpResponse response = httpClient.execute(getRequest);
-				
-				if (response.getStatusLine().getStatusCode() != 200) {
-					throw new RuntimeException("Failed : HTTP error code : "
-					   + response.getStatusLine().getStatusCode());
+					BufferedReader br = new BufferedReader(
+					                 new InputStreamReader((response.getEntity().getContent())));		
+					
+					ObjectMapper mapper = new ObjectMapper();
+					mapper.configure(org.codehaus.jackson.map.SerializationConfig.Feature.INDENT_OUTPUT, true);
+					JsonFactory factory = mapper.getJsonFactory();
+					JsonParser jp = factory.createJsonParser(br);
+					JsonNode rootNode = mapper.readTree(jp);
+					
+					System.out.println(mapper.writeValueAsString(rootNode));
+					
+					
+				} catch (IllegalStateException | IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
-
-				BufferedReader br = new BufferedReader(
-				                 new InputStreamReader((response.getEntity().getContent())));		
-				
-				ObjectMapper mapper = new ObjectMapper();
-				mapper.configure(org.codehaus.jackson.map.SerializationConfig.Feature.INDENT_OUTPUT, true);
-				JsonFactory factory = mapper.getJsonFactory();
-				JsonParser jp = factory.createJsonParser(br);
-				JsonNode rootNode = mapper.readTree(jp);
-				
-				System.out.println(mapper.writeValueAsString(rootNode));
 				
 				
-			} catch (JsonParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (ClientProtocolException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IllegalStateException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (JsonProcessingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
 			
 			
 		}
