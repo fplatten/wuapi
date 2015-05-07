@@ -1,4 +1,4 @@
-package com.first.wuapi.domain;
+package com.first.wuapi.domain.conditions;
 
 import java.util.HashMap;
 import java.util.Map;

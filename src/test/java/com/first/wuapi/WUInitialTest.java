@@ -25,9 +25,8 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.first.wuapi.domain.ConditionsResult;
-import com.first.wuapi.domain.CurrentObservation;
-import com.first.wuapi.domain.ConditionsResult;
+import com.first.wuapi.domain.conditions.ConditionsResult;
+import com.first.wuapi.domain.conditions.CurrentObservation;
 
 public class WUInitialTest {
 	

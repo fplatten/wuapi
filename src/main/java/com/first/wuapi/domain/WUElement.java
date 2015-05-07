@@ -2,7 +2,7 @@ package com.first.wuapi.domain;
 
 public abstract class WUElement implements Parsable{
 	
-	String result;
+	protected String result;
 	
 	@Override
 	public void setResult(String result) {

@@ -1,4 +1,4 @@
-package com.first.wuapi.domain;
+package com.first.wuapi.domain.conditions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,33 +13,79 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")
 @JsonPropertyOrder({
-"conditions"
+"url",
+"title",
+"link"
 })
-public class Features {
+public class Image {
 
-@JsonProperty("conditions")
-private Integer conditions;
+@JsonProperty("url")
+private String url;
+@JsonProperty("title")
+private String title;
+@JsonProperty("link")
+private String link;
 @JsonIgnore
 private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
 /**
 * 
 * @return
-* The conditions
+* The url
 */
-@JsonProperty("conditions")
-public Integer getConditions() {
-return conditions;
+@JsonProperty("url")
+public String getUrl() {
+return url;
 }
 
 /**
 * 
-* @param conditions
-* The conditions
+* @param url
+* The url
 */
-@JsonProperty("conditions")
-public void setConditions(Integer conditions) {
-this.conditions = conditions;
+@JsonProperty("url")
+public void setUrl(String url) {
+this.url = url;
+}
+
+/**
+* 
+* @return
+* The title
+*/
+@JsonProperty("title")
+public String getTitle() {
+return title;
+}
+
+/**
+* 
+* @param title
+* The title
+*/
+@JsonProperty("title")
+public void setTitle(String title) {
+this.title = title;
+}
+
+/**
+* 
+* @return
+* The link
+*/
+@JsonProperty("link")
+public String getLink() {
+return link;
+}
+
+/**
+* 
+* @param link
+* The link
+*/
+@JsonProperty("link")
+public void setLink(String link) {
+this.link = link;
 }
 
 @JsonAnyGetter

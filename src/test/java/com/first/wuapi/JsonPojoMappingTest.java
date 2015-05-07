@@ -11,7 +11,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.jsonschema2pojo.SchemaMapper;
 import org.junit.Test;
 
-import com.first.wuapi.domain.CurrentObservation;
+import com.first.wuapi.domain.conditions.CurrentObservation;
 import com.sun.codemodel.JCodeModel;
 
 public class JsonPojoMappingTest {

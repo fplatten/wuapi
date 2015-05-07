@@ -1,4 +1,4 @@
-package com.first.wuapi.domain;
+package com.first.wuapi.domain.conditions;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -17,6 +17,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonParser.Feature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.first.wuapi.domain.WUElement;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Generated("org.jsonschema2pojo")

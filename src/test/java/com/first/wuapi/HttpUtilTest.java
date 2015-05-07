@@ -10,7 +10,7 @@ import org.codehaus.jackson.JsonProcessingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
 
-import com.first.wuapi.domain.ConditionsResult;
+import com.first.wuapi.domain.conditions.ConditionsResult;
 import com.first.wuapi.util.WUHttpUtil;
 
 public class HttpUtilTest {

@@ -4,9 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.first.wuapi.domain.ConditionsResult;
-import com.first.wuapi.domain.CurrentObservation;
 import com.first.wuapi.domain.WUElement;
+import com.first.wuapi.domain.conditions.ConditionsResult;
+import com.first.wuapi.domain.conditions.CurrentObservation;
 import com.first.wuapi.services.WUndergroundService;
 import com.first.wuapi.services.impl.WUndergroundServiceImpl;
 

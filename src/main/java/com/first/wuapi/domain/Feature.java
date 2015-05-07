@@ -1,5 +1,8 @@
 package com.first.wuapi.domain;
 
+import com.first.wuapi.domain.conditions.ConditionsResult;
+
+
 public enum Feature {
 	
 	CONDITIONS("conditions", ConditionsResult.class),
