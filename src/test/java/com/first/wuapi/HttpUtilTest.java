@@ -14,8 +14,8 @@ import org.junit.Test;
 
 import com.first.wuapi.domain.ResponseFormat;
 import com.first.wuapi.domain.conditions.ConditionsResult;
-import com.first.wuapi.util.WUHttpUtil;
-import com.first.wuapi.util.WURequestBuilder;
+import com.first.wuapi.util.HttpUtil;
+import com.first.wuapi.util.WuApiRequestBuilder;
 
 public class HttpUtilTest {
 	
@@ -28,14 +28,14 @@ public class HttpUtilTest {
 		query.add("CA");
 		query.add("San_Francisco");
 		
-		WURequestBuilder builder = new WURequestBuilder(feature, query, ResponseFormat.JSON);
+		WuApiRequestBuilder builder = new WuApiRequestBuilder(feature, query, ResponseFormat.JSON);
 		
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.configure(org.codehaus.jackson.map.SerializationConfig.Feature.INDENT_OUTPUT, true);
 		JsonFactory factory = mapper.getJsonFactory();
 		
 			try {
-				String result = WUHttpUtil.getWuResponse(builder.build());
+				String result = HttpUtil.getWuResponse(builder.build());
 				JsonParser jp = factory.createJsonParser(result);
 				JsonNode rootNode = mapper.readTree(jp);
 				

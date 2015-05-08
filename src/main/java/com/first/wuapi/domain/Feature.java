@@ -10,7 +10,7 @@ public enum Feature {
 	GEOLOOKUP( "geolookup", GeoLookupResult.class);
 	
 	private final String name;
-	private final Class<? extends WUElement> clazz;
+	private final Class<? extends WuApiElement> clazz;
 	
 	private Feature(String name, Class clazz){
 		
@@ -18,7 +18,7 @@ public enum Feature {
 		this.clazz = clazz;
 	}
 	
-	public Class<? extends WUElement> getClazz(){
+	public Class<? extends WuApiElement> getClazz(){
 		return clazz;
 	}
 	

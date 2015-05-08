@@ -18,7 +18,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonParser.Feature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.first.wuapi.domain.WUElement;
+import com.first.wuapi.domain.WuApiElement;
 import com.first.wuapi.domain.conditions.ConditionsResult;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -27,7 +27,7 @@ import com.first.wuapi.domain.conditions.ConditionsResult;
     "response",
     "location"
 })
-public class GeoLookupResult extends WUElement{
+public class GeoLookupResult extends WuApiElement{
 
     @JsonProperty("response")
     private Response response;

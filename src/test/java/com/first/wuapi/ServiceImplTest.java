@@ -8,14 +8,14 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.first.wuapi.domain.WUElement;
+import com.first.wuapi.domain.WuApiElement;
 import com.first.wuapi.domain.ResponseFormat;
 import com.first.wuapi.domain.conditions.ConditionsResult;
 import com.first.wuapi.domain.conditions.CurrentObservation;
 import com.first.wuapi.domain.geolookup.GeoLookupResult;
 import com.first.wuapi.domain.geolookup.Location;
-import com.first.wuapi.services.WUndergroundService;
-import com.first.wuapi.services.impl.WUndergroundServiceImpl;
+import com.first.wuapi.services.WuApiService;
+import com.first.wuapi.services.impl.WuApiServiceImpl;
 
 public class ServiceImplTest {
 	
@@ -27,10 +27,10 @@ public class ServiceImplTest {
 		query.add("CA");
 		query.add("San_Francisco");
 		
-		WUndergroundService wUndergroundService = new WUndergroundServiceImpl();
+		WuApiService wUndergroundService = new WuApiServiceImpl();
 		
 		try {
-			WUElement element = wUndergroundService.query(feature, query, ResponseFormat.JSON);
+			WuApiElement element = wUndergroundService.query(feature, query, ResponseFormat.JSON);
 			
 			assertEquals( ConditionsResult.class  , element.getClass());
 			
@@ -54,10 +54,10 @@ public class ServiceImplTest {
 		query.add("CA");
 		query.add("San_Francisco");
 		
-		WUndergroundService wUndergroundService = new WUndergroundServiceImpl();
+		WuApiService wUndergroundService = new WuApiServiceImpl();
 		
 		try {
-			WUElement element = wUndergroundService.query(feature, query, ResponseFormat.JSON);
+			WuApiElement element = wUndergroundService.query(feature, query, ResponseFormat.JSON);
 			
 			assertEquals( GeoLookupResult.class  , element.getClass());
 			

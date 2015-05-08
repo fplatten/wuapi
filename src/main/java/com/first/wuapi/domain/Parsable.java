@@ -6,7 +6,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 
 public interface Parsable {
 	
-	public WUElement parse() throws JsonParseException, IOException;
+	public WuApiElement parse() throws JsonParseException, IOException;
 	
 	public void setResult(String result);
 

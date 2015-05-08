@@ -10,7 +10,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
 
-public class WUHttpUtil {
+public class HttpUtil {
 
 	public static String getWuResponse(String url)
 			throws ClientProtocolException, IOException {

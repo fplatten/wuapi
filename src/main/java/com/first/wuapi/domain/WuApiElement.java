@@ -8,7 +8,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonParser.Feature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public abstract class WUElement implements Parsable{
+public abstract class WuApiElement implements Parsable{
 	
 	protected String result;
 	
@@ -18,7 +18,7 @@ public abstract class WUElement implements Parsable{
 	}
 	
 	@Override
-	public WUElement parse() throws JsonParseException, IOException {
+	public WuApiElement parse() throws JsonParseException, IOException {
 		
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.configure(Feature.AUTO_CLOSE_SOURCE, true);

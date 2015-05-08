@@ -4,10 +4,10 @@ import java.io.IOException;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.first.wuapi.domain.Parsable;
-import com.first.wuapi.domain.WUElement;
+import com.first.wuapi.domain.WuApiElement;
 import com.first.wuapi.domain.Feature;
 
-public class WUFactory {
+public class WuFactory {
 
 	@SuppressWarnings("unchecked")
 	public static <T> T getFeatureResult(String result, String feature)
@@ -15,7 +15,7 @@ public class WUFactory {
 			JsonParseException, IOException {
 		Parsable element = null;
 
-		Class<? extends WUElement> clazz = Feature.valueOf(
+		Class<? extends WuApiElement> clazz = Feature.valueOf(
 				feature.toUpperCase()).getClazz();
 		element = clazz.newInstance();
 		element.setResult(result);

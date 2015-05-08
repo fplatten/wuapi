@@ -3,10 +3,10 @@ package com.first.wuapi.util;
 import java.util.List;
 import com.first.wuapi.domain.ResponseFormat;
 
-public class WURequestBuilder {
+public class WuApiRequestBuilder {
 	
 	private String host = "http://api.wunderground.com/api";
-	private String key = "";
+	private String key = "18d2fdceb2650b34";
 	private String feature;
 	private List<String> query;
 	private ResponseFormat format;
@@ -14,7 +14,7 @@ public class WURequestBuilder {
 	private static final String Q = "q";
 	private static final String DOT = ".";
 	
-	public WURequestBuilder(String feature, List<String> query, ResponseFormat format ){
+	public WuApiRequestBuilder(String feature, List<String> query, ResponseFormat format ){
 		
 		this.feature = feature;
 		this.query = query;
