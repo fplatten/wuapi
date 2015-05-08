@@ -29,19 +29,15 @@ public class HttpUtilTest {
 		query.add("San_Francisco");
 		
 		WURequestBuilder builder = new WURequestBuilder(feature, query, ResponseFormat.JSON);
-		String result = WUHttpUtil.getWuResponse(builder.build());
 		
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.configure(org.codehaus.jackson.map.SerializationConfig.Feature.INDENT_OUTPUT, true);
 		JsonFactory factory = mapper.getJsonFactory();
 		
 			try {
+				String result = WUHttpUtil.getWuResponse(builder.build());
 				JsonParser jp = factory.createJsonParser(result);
 				JsonNode rootNode = mapper.readTree(jp);
-				
-				//ConditionsResult co = mapper.readValue( jp  , ConditionsResult.class);
-				
-				//co.getCurrentObservation().getStationId();
 				
 				System.out.println(mapper.writeValueAsString(rootNode));
 				

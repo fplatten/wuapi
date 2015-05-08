@@ -2,6 +2,7 @@ package com.first.wuapi;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,15 +29,20 @@ public class ServiceImplTest {
 		
 		WUndergroundService wUndergroundService = new WUndergroundServiceImpl();
 		
-		WUElement element = wUndergroundService.query(feature, query, ResponseFormat.JSON);
-		
-		assertEquals( ConditionsResult.class  , element.getClass());
-		
-		ConditionsResult cr = (ConditionsResult) element;
-		
-		CurrentObservation co = cr.getCurrentObservation();
-		
-		assertEquals( "KCASANFR58"  , co.getStationId());
+		try {
+			WUElement element = wUndergroundService.query(feature, query, ResponseFormat.JSON);
+			
+			assertEquals( ConditionsResult.class  , element.getClass());
+			
+			ConditionsResult cr = (ConditionsResult) element;
+			
+			CurrentObservation co = cr.getCurrentObservation();
+			
+			assertEquals( "KCASANFR58"  , co.getStationId());
+		} catch (InstantiationException | IllegalAccessException | IOException e) {
+			fail();
+			e.printStackTrace();
+		}
 		
 	}
 	
@@ -50,15 +56,20 @@ public class ServiceImplTest {
 		
 		WUndergroundService wUndergroundService = new WUndergroundServiceImpl();
 		
-		WUElement element = wUndergroundService.query(feature, query, ResponseFormat.JSON);
-		
-		assertEquals( GeoLookupResult.class  , element.getClass());
-		
-		GeoLookupResult gl = (GeoLookupResult) element;
-		
-		Location loc = gl.getLocation();
-		
-		assertEquals( "94101"  , loc.getZip());
+		try {
+			WUElement element = wUndergroundService.query(feature, query, ResponseFormat.JSON);
+			
+			assertEquals( GeoLookupResult.class  , element.getClass());
+			
+			GeoLookupResult gl = (GeoLookupResult) element;
+			
+			Location loc = gl.getLocation();
+			
+			assertEquals( "94101"  , loc.getZip());
+		} catch (InstantiationException | IllegalAccessException | IOException e) {
+			fail();
+			e.printStackTrace();
+		}
 		
 		
 	}
