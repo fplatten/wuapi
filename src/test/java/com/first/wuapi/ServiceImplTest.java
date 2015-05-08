@@ -2,9 +2,13 @@ package com.first.wuapi;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 
 import com.first.wuapi.domain.WUElement;
+import com.first.wuapi.domain.ResponseFormat;
 import com.first.wuapi.domain.conditions.ConditionsResult;
 import com.first.wuapi.domain.conditions.CurrentObservation;
 import com.first.wuapi.domain.geolookup.GeoLookupResult;
@@ -18,13 +22,13 @@ public class ServiceImplTest {
 	public void testWeatherUndergroundApi(){
 		
 		String feature = "conditions";
-		String settings = "CA";
-		String query = "San_Francisco";
-		String format = "json";
+		List<String> query = new ArrayList<>();
+		query.add("CA");
+		query.add("San_Francisco");
 		
 		WUndergroundService wUndergroundService = new WUndergroundServiceImpl();
 		
-		WUElement element = wUndergroundService.query(feature, settings, query, format);
+		WUElement element = wUndergroundService.query(feature, query, ResponseFormat.JSON);
 		
 		assertEquals( ConditionsResult.class  , element.getClass());
 		
@@ -32,9 +36,7 @@ public class ServiceImplTest {
 		
 		CurrentObservation co = cr.getCurrentObservation();
 		
-		
 		assertEquals( "KCASANFR58"  , co.getStationId());
-		
 		
 	}
 	
@@ -42,13 +44,13 @@ public class ServiceImplTest {
 	public void testGeoLookup(){
 		
 		String feature = "geolookup";
-		String settings = "CA";
-		String query = "San_Francisco";
-		String format = "json";
+		List<String> query = new ArrayList<>();
+		query.add("CA");
+		query.add("San_Francisco");
 		
 		WUndergroundService wUndergroundService = new WUndergroundServiceImpl();
 		
-		WUElement element = wUndergroundService.query(feature, settings, query, format);
+		WUElement element = wUndergroundService.query(feature, query, ResponseFormat.JSON);
 		
 		assertEquals( GeoLookupResult.class  , element.getClass());
 		

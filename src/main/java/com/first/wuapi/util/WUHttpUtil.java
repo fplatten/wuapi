@@ -3,7 +3,6 @@ package com.first.wuapi.util;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.text.MessageFormat;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -12,17 +11,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 
 public class WUHttpUtil {
 	
-	
-	private static final String KEY = ""; // get key from local property file
-	private static final String TEMPLATE = "http://api.wunderground.com/api/{0}/{1}/q/{2}/{3}.{4}";
-	
-	
-	public static String getWuResponse(String feature, String settings, String query,
-			String format){
-		
-		String url = MessageFormat.format(
-				TEMPLATE,
-			      new Object[] { KEY , feature, settings, query, format});
+	public static String getWuResponse(String url){
 		
 		System.out.println(url);
 		HttpClient httpClient = HttpClientBuilder.create().build();

@@ -38,8 +38,6 @@ public class WUInitialTest {
 			
 			String url = "http://api.wunderground.com/api/"+ key + "/conditions/q/GA/Atlanta.json";
 			
-			//            http://api.wunderground.com/api/18d2fdceb2650b34/conditions/CA/q/San_Francisco.json
-			
 			HttpClient httpClient = HttpClientBuilder.create().build();
 			HttpGet getRequest = new HttpGet( url );
 			getRequest.addHeader("accept", "text/plain");
