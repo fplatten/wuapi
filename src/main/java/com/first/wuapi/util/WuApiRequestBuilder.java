@@ -6,7 +6,7 @@ import com.first.wuapi.domain.ResponseFormat;
 public class WuApiRequestBuilder {
 	
 	private String host = "http://api.wunderground.com/api";
-	private String key = "18d2fdceb2650b34";
+	private String key = "";
 	private String feature;
 	private List<String> query;
 	private ResponseFormat format;

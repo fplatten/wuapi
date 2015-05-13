@@ -14,8 +14,8 @@ import com.first.wuapi.domain.conditions.ConditionsResult;
 import com.first.wuapi.domain.conditions.CurrentObservation;
 import com.first.wuapi.domain.geolookup.GeoLookupResult;
 import com.first.wuapi.domain.geolookup.Location;
-import com.first.wuapi.services.WuApiService;
-import com.first.wuapi.services.impl.WuApiServiceImpl;
+import com.first.wuapi.services.WuApiDataFeaturesService;
+import com.first.wuapi.services.impl.WuApiDataFeaturesServiceImpl;
 
 public class ServiceImplTest {
 	
@@ -27,7 +27,7 @@ public class ServiceImplTest {
 		query.add("CA");
 		query.add("San_Francisco");
 		
-		WuApiService wUndergroundService = new WuApiServiceImpl();
+		WuApiDataFeaturesService wUndergroundService = new WuApiDataFeaturesServiceImpl();
 		
 		try {
 			WuApiElement element = wUndergroundService.query(feature, query, ResponseFormat.JSON);
@@ -54,7 +54,7 @@ public class ServiceImplTest {
 		query.add("CA");
 		query.add("San_Francisco");
 		
-		WuApiService wUndergroundService = new WuApiServiceImpl();
+		WuApiDataFeaturesService wUndergroundService = new WuApiDataFeaturesServiceImpl();
 		
 		try {
 			WuApiElement element = wUndergroundService.query(feature, query, ResponseFormat.JSON);

@@ -8,11 +8,11 @@ import org.apache.http.client.ClientProtocolException;
 import com.first.wuapi.domain.WuApiElement;
 import com.first.wuapi.domain.ResponseFormat;
 import com.first.wuapi.factory.WuFactory;
-import com.first.wuapi.services.WuApiService;
+import com.first.wuapi.services.WuApiDataFeaturesService;
 import com.first.wuapi.util.HttpUtil;
 import com.first.wuapi.util.WuApiRequestBuilder;
 
-public class WuApiServiceImpl implements WuApiService {
+public class WuApiDataFeaturesServiceImpl implements WuApiDataFeaturesService {
 
 	@Override
 	public WuApiElement query(String feature, List<String> query,
